@@ -26,6 +26,30 @@ body {
 	font-family: Calibri, Arial, sans-serif;
 }
 
+.Toapp{
+	background-color: orange;
+	border-radius: 100%;
+	position: fixed;
+	height: 50px;
+	width: 50px;
+	top: 90%;
+	left: 95%;
+	z-index: 2;
+}
+
+.Toapp i{
+	transform: rotate(270deg);
+	width: 10px;
+	height: 10px;
+	color:white;
+	text-align: center;
+	align-items: center;
+	position: absolute;
+	top: 18px;
+	left: 15px;
+	font-size: 19px;
+}
+
 
 .large-header {
 	position: relative;	
@@ -3605,29 +3629,6 @@ body {
 		width: 100px;
 	}
 	
-	.Toapp {
-    background-color: orange;
-    border-radius: 100%;
-    position: fixed;
-    height: 50px;
-    width: 50px;
-    top: 90%;
-    left: 95%;
-    z-index: 2;
-	}
-	
-	.Toapp i {
-    transform: rotate(270deg);
-    width: 10px;
-    height: 10px;
-    color: white;
-    text-align: center;
-    align-items: center;
-    position: absolute;
-    top: 18px;
-    left: 15px;
-    font-size: 19px;
-}
 	
 }
 
