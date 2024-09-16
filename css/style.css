@@ -1,0 +1,123 @@
+body {
+	padding: 0;
+	margin: 0;
+	background-color: #fff;
+	width: 414px;
+	height: 896px;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+#logo-div {
+	position: relative;
+	background-color: #fff;
+	width: 100%;
+	height: 150px;
+}
+
+#logo {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 550px;
+	height: 450px;
+}
+
+.info {
+	position: relative;
+	width: 100%;
+	height: 300px;
+	top: 80px;
+}
+
+#f_pass {
+	position: absolute;
+	text-decoration: none;
+	color: #0095F6;
+	top: 50%;
+	left: 75%;
+	transform: translate(-50%,-75%);
+	font-size: 15px;
+}
+
+#form {
+	position: relative;
+	width: 100%;
+	height: 100px;
+}
+
+.inputs {
+	padding: 10px;
+	width: 65%;
+	border-radius: 5px;
+	font-style: italic;
+	font-size: 12px;
+	border: 1px solid #DBDBDB;
+	background-color: #FAFAFA;
+}
+
+#log {
+	position: absolute;
+	display: block;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+#pas {
+	position: absolute;
+	display: block;
+	left: 50%;
+	top: 40%;
+	transform: translateX(-50%);
+}
+
+#autorizate {
+	position: absolute;
+	left: 50%;
+	top: 120%;
+	transform: translate(-50%, -120%);
+	padding: 7px;
+	width: 70%;
+	border-radius: 7px;
+	border: 0px;
+	color: white;
+	background-color: rgb(76,181,249);
+	font-style: italic, bold;
+	font-size: 15px;
+	
+}
+
+#autorizate a{
+	text-decoration: none;
+	color: white;
+}
+
+#reg_text {
+	position: absolute;
+	left: 30%;
+	top:70%;
+	transform: translate(-30%, -70%);
+	font-size: 13px;
+	color:#737373;
+}
+
+#reg {
+	text-decoration: none;
+	position: absolute;
+	left: 75%;
+	top:70%;
+	transform: translate(-75%, -70%);
+	font-size: 13px;
+	color: #0095F6;	
+}
+
+.h-img {
+	position: absolute;
+	width: 550px;
+	height: 450px;
+	left: 50%;
+	top: 105%;
+	transform: translate(-50%, -105%);
+}
