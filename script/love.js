@@ -139,4 +139,4 @@ function continueMusic() {
 document.addEventListener("DOMContentLoaded", function () { 
   init(); 
   continueMusic(); 
-}); 
+});
