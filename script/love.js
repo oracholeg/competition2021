@@ -1,4 +1,5 @@
 window.requestAnimationFrame = window.__requestAnimationFrame || window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || (function () { return function (callback, element) { var lastTime = element.__lastTime || 0; var currTime = Date.now(); var timeToCall = Math.max(1, 33 - (currTime - lastTime)); window.setTimeout(callback, timeToCall); element.__lastTime = currTime + timeToCall; }; })(); 
+
 window.isDevice = /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test((navigator.userAgent || navigator.vendor || window.opera).toLowerCase()); 
 
 var loaded = false; 
@@ -7,19 +8,19 @@ function init() {
   loaded = true; 
 
   var mobile = window.isDevice; 
-  var koef = mobile ? 0.5 : 1; 
-
   var canvas = document.getElementById("heart"); 
   var ctx = canvas.getContext("2d"); 
 
   // Устанавливаем размеры канваса равными размерам экрана
-  var width = (canvas.width = koef * window.innerWidth); 
-  var height = (canvas.height = koef * window.innerHeight);
+  var width = (canvas.width = window.innerWidth); 
+  var height = (canvas.height = window.innerHeight);
 
+  // Рандомизируем (или можем сделать более детализированные эффекты)
   var rand = Math.random; 
   ctx.fillStyle = "rgba(0,0,0,1)"; 
   ctx.fillRect(0, 0, width, height); 
 
+  // Функция рисования текста
   function drawText() { 
     ctx.font = "60px Arial"; 
     ctx.fillStyle = "lightblue"; 
@@ -27,6 +28,7 @@ function init() {
     ctx.fillText("I love you", width / 2, height / 2.2 + 400); 
   }
 
+  // Позиции сердечка
   function heartPosition(rad) { 
     return [ 
       Math.pow(Math.sin(rad), 3), 
@@ -34,13 +36,15 @@ function init() {
     ]; 
   }
 
+  // Масштабирование и трансформация позиции
   function scaleAndTranslate(pos, sx, sy, dx, dy) { 
     return [dx + pos[0] * sx, dy + pos[1] * sy]; 
   }
 
   window.addEventListener("resize", function () { 
-    width = canvas.width = koef * window.innerWidth; 
-    height = canvas.height = koef * window.innerHeight; 
+    // Обновляем размеры канваса при изменении размеров окна
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = window.innerHeight;
     ctx.fillStyle = "rgba(0,0,0,1)"; 
     ctx.fillRect(0, 0, width, height); 
   });
@@ -49,6 +53,7 @@ function init() {
   var pointsOrigin = []; 
   var dr = mobile ? 0.3 : 0.1; 
 
+  // Добавляем точки для рисования сердечка
   for (var i = 0; i < Math.PI * 2; i += dr) pointsOrigin.push(scaleAndTranslate(heartPosition(i), 310, 19, 0, 0)); 
   for (var i = 0; i < Math.PI * 2; i += dr) pointsOrigin.push(scaleAndTranslate(heartPosition(i), 250, 15, 0, 0)); 
   for (var i = 0; i < Math.PI * 2; i += dr) pointsOrigin.push(scaleAndTranslate(heartPosition(i), 190, 11, 0, 0)); 
